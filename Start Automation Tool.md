@@ -38,7 +38,7 @@
 
    Until 1811, only these test plans need to be covered.
 
-   ![Details](./Images/START/Details.jpg) 
+   ![Details](./Images/START/Details.JPG) 
 
 4. If you need to delete some test cases, you should delete them in ECE first and transport to ECA.
 
