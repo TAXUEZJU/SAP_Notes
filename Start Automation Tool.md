@@ -34,6 +34,12 @@
 
    You can create new packages to manage your test plan.
 
+   Notice: 
+
+   Until 1811, only these test plans need to be covered.
+
+   ![](./Images/START/Details.jpg) 
+
 4. If you need to delete some test cases, you should delete them in ECE first and transport to ECA.
 
 #### Test Automation Report KPI
