@@ -34,13 +34,25 @@
 
    You can create new packages to manage your test plan.
 
+4. If you need to delete some test cases, you should delete them in ECE first and transport to ECA.
+
+#### Manage Automatic Test
+
+Routine: Test-> Test Workbench -> Test Organizer -> Test Plan Management
+
+Select `S4H_CE_START_SCRIPT_FICA`, click "Test Packages".
+
+1. You can create new packages to manage your test plan.
+
    Notice: 
 
    Until 1811, only these test plans need to be covered.
 
-   ![Details](./Images/START/Details.JPG) 
+![Details](./Images/START/Details.JPG) 
 
-4. If you need to delete some test cases, you should delete them in ECE first and transport to ECA.
+2. To run test packages, choose the test package, click `Status Analysis`, then choose corresponding test plan or test plan groups, click `Automatic Test`. The Parameters you need to set are in below picture.
+
+![](./Images/START/Parameters.JPG)
 
 #### Test Automation Report KPI
 
