@@ -48,11 +48,11 @@ Select `S4H_CE_START_SCRIPT_FICA`, click "Test Packages".
 
    Until 1811, only these test plans need to be covered.
 
-![Details](./Images/START/Details.JPG) 
+   ![Details](./Images/START/Details.JPG) 
 
 2. To run test packages, choose the test package, click `Status Analysis`, then choose corresponding test plan or test plan groups, click `Automatic Test`. The Parameters you need to set are in below picture.
 
-![](./Images/START/Parameters.JPG)
+   ![Parameters](./Images/START/Parameters.JPG)
 
 #### Test Automation Report KPI
 
