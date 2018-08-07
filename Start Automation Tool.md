@@ -1,5 +1,7 @@
 ### Start Automation Tool
 
+### ECE
+
 #### Create a test case in ECE
 
 1. Sign in ECE, T_Code "start_home"
@@ -8,11 +10,13 @@
 
 #### Transfer to ECA
 
-1. In ECE, use T_Code "se09", choose **Display**
+1. In ECE, use T_Code `se09`, choose **Display**
 
    Notice: click subitem of the request first, and click "release directly", then the request, click "release directly".
 
-2. In ECA, use T_Code "se09", click **Transports**, it will show "Successful Imports" if release has been received.
+2. In ECA, use T_Code `se09`, click **Transports**, it will show "Successful Imports" if release has been received.
+
+### ECA
 
 #### Manage test plan in ECA
 
@@ -53,6 +57,32 @@ Select `S4H_CE_START_SCRIPT_FICA`, click "Test Packages".
 2. To run test packages, choose the test package, click `Status Analysis`, then choose corresponding test plan or test plan groups, click `Automatic Test`. The Parameters you need to set are in below picture.
 
    ![Parameters](./Images/START/Parameters.JPG)
+
+#### Preparation before weekly Automatic Test
+
+For test case `FP09_PROCESS_RETURNS_LOT`, parameters need to be modified in ECE before weekly test.
+
+1. In CC2/CCF 715, post a document with information below, record your document number.
+
+   ![](./Images/START/post.JPG)
+
+2. Then use T_code `FPY1`, execute Payment Run, parameters like below, change date to the document date.
+
+   ![](./Images/START/Payment.JPG)
+
+   In **Custom Selections** tab, enter corresponding document number.
+
+   In **Bank  Selection** tab, select `PayingCCde` 1010, `Payt Meth.` T.
+
+   In **Logs** tab, check all additional log .
+
+   After running the task, record the clearing document number in the log, and modify corresponding value in ECE test script. Then transfer the request to ECA.
+
+   #### Other Reminders
+
+   Some test cases may fail, sometimes it will pass if you run it again.
+
+   There are several test cases which may fail due to system lock. Run them again half an hour later.
 
 #### Test Automation Report KPI
 
