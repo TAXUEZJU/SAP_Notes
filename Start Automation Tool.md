@@ -74,7 +74,7 @@ For test case `FP09_PROCESS_RETURNS_LOT`, parameters need to be modified in ECE 
 
    In **Bank  Selection** tab, select `PayingCCde` 1010, `Payt Meth.` T.
 
-   In **Logs** tab, check all additional log .
+   In **Logs** tab, check all `additional log`, and switch `Problem Class` to **Additional Information**.
 
    After running the task, record the clearing document number in the log, and modify corresponding value in ECE test script. Then transfer the request to ECA.
 
