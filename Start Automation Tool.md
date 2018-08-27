@@ -16,6 +16,8 @@
 
 2. In ECA, use T_Code `se09`, click **Transports**, it will show "Successful Imports" if release has been received.
 
+
+
 ### ECA
 
 #### Manage test plan in ECA
@@ -58,27 +60,37 @@ Select `S4H_CE_START_SCRIPT_FICA`, click "Test Packages".
 
    ![Parameters](./Images/START/Parameters.JPG)
 
-#### Preparation before weekly Automatic Test
+#### Dependencies
 
-For test case `FP09_PROCESS_RETURNS_LOT`, parameters need to be modified in ECE before weekly test.
+- For test case `FP09_PROCESS_RETURNS_LOT`, parameters need to be modified in ECE before weekly test.
 
-1. In CC2/CCF 715, post a document with information below, record your document number.
+  1. In CC2/CCF 715, post a document with information below, record your document number.
 
-   ![](./Images/START/post.JPG)
+     ![](./Images/START/post.JPG)
 
-2. Then use T_code `FPY1`, execute Payment Run, parameters like below, change date to the document date.
+  2. Then use T_code `FPY1`, execute Payment Run, parameters like below, change date to the document date.
 
-   ![](./Images/START/Payment.JPG)
+     ![](./Images/START/Payment.JPG)
 
-   In **Custom Selections** tab, enter corresponding document number.
+     In **Custom Selections** tab, enter corresponding document number.
 
-   In **Bank  Selection** tab, select `PayingCCde` 1010, `Payt Meth.` T.
+     In **Bank  Selection** tab, select `PayingCCde` 1010, `Payt Meth.` T.
 
-   In **Logs** tab, check all `additional log`, and switch `Problem Class` to **Additional Information**.
+     In **Logs** tab, check all `additional log`, and switch `Problem Class` to **Additional Information**.
 
-   After running the task, record the clearing document number in the log, and modify corresponding value in ECE test script. Then transfer the request to ECA.
+     After running the task, record the clearing document number in the log, and modify corresponding value in ECE test script. Then transfer the request to ECA.
 
-   #### Other Reminders
+- For  `FPDEP_EXP_BP_DATA_EXTRA`, `FPDEP_IMP_BP_DATA_IMPORT`, `FPDEP_DEL_DELETE_PARTNER`, the corresponding posting period should be closed before running. 
+
+  When you get error message like "Period is not closed." You should use `GL_ACCOUNTANT` to log in front system and find the `Manage Posting Periods ` app.
+
+  In the field `Posting Period Variant`, check all items of "1010". In the field `Account Type`, choose `V(Contract accounts)`, then choose the result line, click `Set Posting Periods -> Open Periods` to adjust.
+
+  Note that in `Normal Periods`, enter your fiscal year period like `from "2018 01" to "2018 12"`, in `Adjustment Periods`, enter fiscal year period like `from "2018 13" to "2018 16"`. When fiscal year period 2018 is active, others are inactive. You should make your testing data inactive.
+
+  Once it turns out error even you set correctly like above, you may also check  `+(Valid for all account types)` and `S(G/L accounts)` in `Account Type` field, and adjust their periods. It may affect others' testing, so be careful.
+
+#### Other Reminders
 
    Some test cases may fail, sometimes it will pass if you run it again.
 
