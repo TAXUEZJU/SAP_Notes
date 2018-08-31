@@ -2,11 +2,16 @@
 
 ### ECE
 
+#### Maintain Target System
+
+T_Code `secatt`, you can maintain system data here. If new target systems need to be added, use T_Code `sm59` to create and add.
+
 #### Create a test case in ECE
 
 1. Sign in ECE, T_Code "start_home"
 2. Choose **create**, select **Launch with Url**, *System Data Container* in ECE&ECA is `S4H_CE_VH_FICA`, choose *Target System* you want to run test cases on. Paste corresponding Url in `Url Details`
 3. Click on **create**, record test operations and save. Package is `ECATT_FICA_CI`. Once you need mark what you have done, you need to create a new request.
+4. Notice that you need to design test data and the check to make sure the test script can be tested repeatedly. 
 
 #### Transfer to ECA
 
@@ -96,6 +101,6 @@ Select `S4H_CE_START_SCRIPT_FICA`, click "Test Packages".
 
    There are several test cases which may fail due to system lock. Run them again half an hour later.
 
-#### Test Automation Report KPI
+###  Test Automation Report KPI
 
-Run **TESTCOV_BB** / **TESTCOV_BB_DETAIL** in **ER6.001** with variant **FICA_APP** 
+Run **TESTCOV_BB** / **TESTCOV_BB_DETAIL** in **ER6.001**， “Goto->Get->Variant” with variant **FICA_APP**.
