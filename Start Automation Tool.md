@@ -27,7 +27,7 @@ T_Code `secatt`, you can maintain system data here. If new target systems need t
 
 In ECA,  `Test Plan Management` and `Test Catalog Management` will be used frequently.  Add them to Favorites. Full path in the following picture.
 
-![menu](./Images/START/menu.png)
+![menu](./Images/START/Menu.png)
 
 #### Manage Test Catalog
 
