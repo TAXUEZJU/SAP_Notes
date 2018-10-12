@@ -25,27 +25,52 @@ T_Code `secatt`, you can maintain system data here. If new target systems need t
 
 ### ECA
 
-#### Manage test plan in ECA
+In ECA,  `Test Plan Management` and `Test Catalog Management` will be used frequently.  Add them to Favorites. Full path in the following picture.
 
-1. You should first add new test cases into Test Catalog.
+![menu](./Images/START/menu.png)
 
-   Enter "Test -> Test Workbench -> Test Organizer -> Test Catalog Management", select `FI-CA_Test_Catalog`, click **Change**. 
+#### Manage Test Catalog
 
-   Choose the place you want to add in, click "On Same Level". Choose "Test Case", Type "eCATT", fill the case name in the "Test Case Key" field. Then save.
+We use Test Catalog to manage test scripts. You can regard it as a root directory for all your test scripts. Enter in `Test Catalog Management`. For FICA, we already maintain a catalog. Search for `FI-CA_Test_Catalog` and add it to favorites.
 
-2. Then add test cases into Test Plan.
+We can see the structure of this catalog. 
 
-   Enter "Test -> Test Workbench -> Test Organizer -> Test Plan Management", select `S4H_CE_START_SCRIPT_FICA`, click **Change**
+- `FICA_Webgui` and `FICA_Fiori` cover all test scripts we need to run weekly.
+- `FICA_for_Future_Release` is a directory to store test scripts for those in for future release. Once these apps are released, we need to update the corresponding test scripts and move them to corresponding directory. 
+- `FICA_Handover_List`, this directory stores all test scripts handed over.
+- `FICA_Pre_Steps`, this directory is for STE colleagues to create test data in new test system. More details in `\\cnpvgl000\Restricted\FGI\50_Project\FICA_on_Cloud\60_Quality\START_HANDOVER\Pre-steps`.
 
-   Directory: `Finanzwesen` --> `Vertragskontokorrent`--> `FI-CA_Test_Catalog`, check your new cases, click **Generate** 
+![Test Catalog Overview](./Images/START/TestCatalog_overview.png)
 
-3. Test Packages Management
 
-   The same route as step 2, click **Test Packages**
 
-   You can create new packages to manage your test plan.
+Each time you transport new test scripts from ECE to ECA, you need to add them in your test catalog. To do this, follow these steps:
 
-4. If you need to delete some test cases, you should delete them in ECE first and transport to ECA.
+1. In `Test Catalog Management`, select `FI-CA_Test_Catalog`, click **Change**. 
+
+   ![](./Images/START/Change_Test_Catalog.png)
+
+1. Use **On Same Level** or **As Subnode** to choose the place you want to store your script. Choose **Test Case**, Type **eCATT**, fill the case name in the "Test Case Key" field. Then save.
+
+   ![Import new script](./Images/START/Import.png)
+
+
+
+#### Manage Test Plan
+
+For FICA, we already have a test plan for weekly regression test. Enter in `Test Plan Management`, search for `S4H_CE_START_SCRIPT_FICA` and add it to favorites.
+
+To edit your test plan, follow these steps:
+
+1. Enter in **Test Plan Management**, select `S4H_CE_START_SCRIPT_FICA`, click **Change**
+
+   ![](./Images/START/Change_Test_Plan.png)
+
+2. Directory: `Node text not found` --> `Node text not found` --> `Finanzwesen` --> `Vertragskontokorrent`--> `FI-CA_Test_Catalog`, check all cases you want to include, click **Generate** 
+
+   ![](./Images/START/Directory.png)
+
+3. If you need to delete some test scripts, you should uncheck them in test plan and test catalog, then delete them in ECE first and transport to ECA.
 
 #### Manage Automatic Test
 
