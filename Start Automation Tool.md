@@ -136,9 +136,9 @@ Usually, we run automatic test once a week or every two weeks. Before you run au
 
 #### Other Reminders
 
-   Some test cases may fail, sometimes it will pass if you run it again.
+Some test cases may fail, sometimes it will pass if you run it again.
 
-   There are several test cases which may fail due to system lock. Run them again half an hour later.
+There are several test cases which may fail due to system lock. Run them again half an hour later. Or you can use `sm12` in backend system to delete the lock.
 
 ###  Test Automation Report KPI
 
