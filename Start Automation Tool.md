@@ -74,21 +74,35 @@ To edit your test plan, follow these steps:
 
 #### Manage Automatic Test
 
-Routine: Test-> Test Workbench -> Test Organizer -> Test Plan Management
+Enter in `Test Plan Management`, select `S4H_CE_START_SCRIPT_FICA`, and click "Test Packages". Then you will see all test packages in our test plan.
 
-Select `S4H_CE_START_SCRIPT_FICA`, click "Test Packages".
+![](./Images/START/Test_Packages.png)
+
+Usually, we run automatic test once a week or every two weeks. Before you run automatic test ,you should create a new test package to make it easier to differentiate from the previous. The naming conventions are `year + CW + week`, `18CW03` means the third week in 2018. To create a test package, click **Create** button.
 
 1. You can create new packages to manage your test plan.
 
    Notice: 
 
-   Until 1811, only these test plans need to be covered.
+   Until Now(Week 42 in 2018), only these test plans need to be covered. (The five test scripts unchecked need to be updated).
 
-   ![Details](./Images/START/Details.JPG) 
+   ![Details](./Images/START/Details.png) 
 
-2. To run test packages, choose the test package, click `Status Analysis`, then choose corresponding test plan or test plan groups, click `Automatic Test`. The Parameters you need to set are in below picture.
+   After selecting, click **Generate** button. Fill in the name and continue to finish the process. The Package is `ECATT_FICA_CI`. Then click "continue" several times.
 
-   ![Parameters](./Images/START/Parameters.JPG)
+   ![](./Images/START/process.png)
+
+2. To run test packages, choose the test package you created, click `Status Analysis`.
+
+   ![](./Images/START/Status_Analysis.png)
+
+3. Then choose corresponding test plan or test plan groups, click `Automatic Test`. 
+
+   ![](./Images/START/Automatic_Test.png)
+
+4. The Parameters you need to set are in below picture. Usually, you only need to set System Data to `S4H_CE_VH_FICA`, and specify the target system you want to run automatic test on. We have already maintain these systems' RFC call. Then click **Execute** button.
+
+   ![Parameters](./Images/START/Parameters.png)
 
 #### Dependencies
 
