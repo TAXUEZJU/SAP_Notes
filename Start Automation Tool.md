@@ -110,11 +110,11 @@ Usually, we run automatic test once a week or every two weeks. Before you run au
 
   1. In CC2/CCF 715, post a document with information below, record your document number.
 
-     ![](./Images/START/post.JPG)
+     ![](./Images/START/post.png)
 
   2. Then use T_code `FPY1`, execute Payment Run, parameters like below, change date to the document date.
 
-     ![](./Images/START/Payment.JPG)
+     ![](./Images/START/Payment.png)
 
      In **Custom Selections** tab, enter corresponding document number.
 
