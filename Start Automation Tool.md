@@ -134,6 +134,42 @@ Usually, we run automatic test once a week or every two weeks. Before you run au
 
   Once it turns out error even you set correctly like above, you may also check  `+(Valid for all account types)` and `S(G/L accounts)` in `Account Type` field, and adjust their periods. It may affect others' testing, so be careful.
 
+### Troubleshoot
+
+#### Possible issues
+
+Here I will list possible issues and corresponding solutions with our test cases. I will list them by group in test catalog.
+
+- **Document_Posting** 
+
+  Three scripts marked may fail. 
+
+  ![](./Images/START/issues_Document_Posting.png)
+  We use the same document number in three test scripts to test functions the T-code points to. However, when you switch to another test system, if there is not a document with this document number, or if the corresponding document is a G/L document, you can not edit the document.
+
+  ***Solution***
+
+  If you encounter this issue, just create a FICA document with BP&CA, update the document number in three scripts.
+
+- **Clearing**
+
+  ![](./Images/START/issues_Clearing.png)
+
+  We have created two documents in test system in pre-steps. They have the same amount and same BP&CA(BP_START and CA_AM) but one's type is 0010, the other's is 0020. We clear the this two documents in `FP06_ACCOUNT_MAINTENANCE`, and reset the clearing document in `FP07_RESET_CLEARING`. However, the test system is open and anyone else could post document with the same BP&CA. So clearing and reset may fail.
+
+  ***Solution***
+
+  Write-off extra documents. Before run `FP06_ACCOUNT_MAINTENANCE`, make sure there are only two documents with BP_START/CA_AM, which have same amount with different type.
+
+- **Dunning**
+
+  ![](./Images/START/issues_Dunning.png)
+
+  You may encounter problems if dunning has not been created successfully in pre-steps. Notice `FPM3_DISPLAY_DUNNING_HISTORY` needs dunning with `BP_START` as BP.
+
+  When you switch to a new test system, update corresponding parameters in `FPMXC_DELETE_DUNNING_EXCEPTIO`.
+
+
 #### Other Reminders
 
 Some test cases may fail due to system unstability or timeout, sometimes it will pass if you run it again.
