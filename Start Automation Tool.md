@@ -145,6 +145,7 @@ Here I will list possible issues and corresponding solutions with our test cases
   Three scripts marked may fail. 
 
   ![](./Images/START/issues_Document_Posting.png)
+
   We use the same document number in three test scripts to test functions the T-code points to. However, when you switch to another test system, if there is not a document with this document number, or if the corresponding document is a G/L document, you can not edit the document.
 
   ***Solution***
