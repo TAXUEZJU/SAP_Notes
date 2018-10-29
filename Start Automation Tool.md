@@ -1,19 +1,19 @@
-### Start Automation Tool
+# Start Automation Tool
 
-### ECE
+## ECE
 
-#### Maintain Target System
+### Maintain Target System
 
 T_Code `secatt`, you can maintain system data here. If new target systems need to be added, use T_Code `sm59` to create and add.
 
-#### Create a test case in ECE
+### Create a test case in ECE
 
 1. Sign in ECE, T_Code "start_home"
 2. Choose **create**, select **Launch with Url**, *System Data Container* in ECE&ECA is `S4H_CE_VH_FICA`, choose *Target System* you want to run test cases on. Paste corresponding Url in `Url Details`
 3. Click on **create**, record test operations and save. Package is `ECATT_FICA_CI`. Once you need mark what you have done, you need to create a new request.
 4. Notice that you need to design test data and the check to make sure the test script can be tested repeatedly. 
 
-#### Transfer to ECA
+### Transfer to ECA
 
 1. In ECE, use T_Code `se09`, choose **Display**
 
@@ -21,15 +21,13 @@ T_Code `secatt`, you can maintain system data here. If new target systems need t
 
 2. In ECA, use T_Code `se09`, click **Transports**, it will show "Successful Imports" if release has been received.
 
-
-
-### ECA
+## ECA
 
 In ECA,  `Test Plan Management` and `Test Catalog Management` will be used frequently.  Add them to Favorites. Full path in the following picture.
 
 ![menu](./Images/START/Menu.png)
 
-#### Manage Test Catalog
+### Manage Test Catalog
 
 We use Test Catalog to manage test scripts. You can regard it as a root directory for all your test scripts. Enter in `Test Catalog Management`. For FICA, we already maintain a catalog. Search for `FI-CA_Test_Catalog` and add it to favorites.
 
@@ -54,9 +52,7 @@ Each time you transport new test scripts from ECE to ECA, you need to add them i
 
    ![Import new script](./Images/START/Import.png)
 
-
-
-#### Manage Test Plan
+### Manage Test Plan
 
 For FICA, we already have a test plan for weekly regression test. Enter in `Test Plan Management`, search for `S4H_CE_START_SCRIPT_FICA` and add it to favorites.
 
@@ -72,7 +68,7 @@ To edit your test plan, follow these steps:
 
 3. If you need to delete some test scripts, you should uncheck them in test plan and test catalog, then delete them in ECE first and transport to ECA.
 
-#### Manage Automatic Test
+### Manage Automatic Test
 
 Enter in `Test Plan Management`, select `S4H_CE_START_SCRIPT_FICA`, and click "Test Packages". Then you will see all test packages in our test plan.
 
@@ -104,7 +100,7 @@ Usually, we run automatic test once a week or every two weeks. Before you run au
 
    ![Parameters](./Images/START/Parameters.png)
 
-#### Dependencies
+### Dependencies
 
 - Pre-steps
 
@@ -222,8 +218,6 @@ There are several test cases which may fail due to system lock. Run them again h
 
 - Once the lock has been deleted, you can execute the test script again.
 
-
-
-###  Test Automation Report KPI
+## Test Automation Report KPI
 
 Run **TESTCOV_BB** / **TESTCOV_BB_DETAIL** in **ER6.001**， “Goto->Get->Variant” with variant **FICA_APP**.
