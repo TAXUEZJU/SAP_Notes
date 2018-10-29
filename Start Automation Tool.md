@@ -194,6 +194,12 @@ Here I will list possible issues and corresponding solutions with our test cases
 
   Two scripts marked may fail. If the "Date ID" and "Identification" in the script do not exist in new test system, there will be errors. So make sure you have updated parameters which point to existing Installment Plan Reports.
 
+- **FICA_Fiori**
+
+  - F2562_MANAGE_BP_ITEMS
+
+    It used `910000000000` as default document number. If corresponding document in test system is not a BP item, it will report "No data found". Update document number if you have this problem.
+
 
 
 #### Other Reminders
