@@ -106,7 +106,9 @@ Usually, we run automatic test once a week or every two weeks. Before you run au
 
 #### Dependencies
 
-- For test case `FP09_PROCESS_RETURNS_LOT`, parameters need to be modified in ECE before weekly test.
+- Pre-steps
+
+  For test case `FP09_PROCESS_RETURNS_LOT`, parameters need to be modified in ECE before weekly test.
 
   1. In CC2/CCF 715, post a document with information below, record your document number.
 
@@ -124,7 +126,9 @@ Usually, we run automatic test once a week or every two weeks. Before you run au
 
      After running the task, record the clearing document number in the log, and modify corresponding value in ECE test script. Then transfer the request to ECA.
 
-- For  `FPDEP_EXP_BP_DATA_EXTRA`, `FPDEP_IMP_BP_DATA_IMPORT`, `FPDEP_DEL_DELETE_PARTNER`, the corresponding posting period should be closed before running. 
+- Close posting period
+
+  For  `FPDEP_EXP_BP_DATA_EXTRA`, `FPDEP_IMP_BP_DATA_IMPORT`, `FPDEP_DEL_DELETE_PARTNER`, the corresponding posting period should be closed before running. 
 
   When you get error message like "Period is not closed." You should use `GL_ACCOUNTANT` to log in front system and find the `Manage Posting Periods ` app.
 
@@ -168,7 +172,28 @@ Here I will list possible issues and corresponding solutions with our test cases
 
   You may encounter problems if dunning has not been created successfully in pre-steps. Notice `FPM3_DISPLAY_DUNNING_HISTORY` needs dunning with `BP_START` as BP.
 
-  When you switch to a new test system, update corresponding parameters in `FPMXC_DELETE_DUNNING_EXCEPTIO`.
+  When you switch to a new test system, update corresponding parameters(Run ID) in `FPMXC_DELETE_DUNNING_EXCEPTIO`.
+
+- **Returns**
+
+  ![](./Images/START/issues_Returns.png)
+
+  Every time you run `FP09_PROCESS_RETURNS_LOT`, you need to to create data and update parameters in test case with reference to `Pre-step` in `Dependencies`.
+
+  For `FPCRL_CLARIFICATION_RETURNS_LO`, it needs to create incomplete postings of returns lot. refer to the document "Create data for FPCRL" in the OneNote.
+
+- **Extracts**
+
+  ![](./Images/START/issues_Extracts.png)
+
+  You may get error message like "Period is not closed yet." Close the posting period with reference to `Close posting period` in `Dependencies`.
+
+- **Closing**
+
+  ![](./Images/START/issues_Closing.png)
+
+  Two scripts marked may fail. If the "Date ID" and "Identification" in the script do not exist in new test system, there will be errors. So make sure you have updated parameters which point to existing Installment Plan Reports.
+
 
 
 #### Other Reminders
