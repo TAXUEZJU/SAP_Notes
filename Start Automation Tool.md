@@ -196,6 +196,10 @@ Here I will list possible issues and corresponding solutions with our test cases
 
     It used `910000000000` as default document number. If corresponding document in test system is not a BP item, it will report "No data found". Update document number if you have this problem.
 
+  - F3638_DISPLAY_SAVED_OPEN_ITEM_LISTS
+
+    It used `BP_01` as the search term. You should run `Create Open Item List for Key Date`(FPO1) first and fill in `BP_01` as "Additional Output" name. After execution, the script can run successfully.
+
 
 
 #### Other Reminders
